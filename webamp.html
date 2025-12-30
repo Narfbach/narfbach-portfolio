@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Webamp</title>
+    <script src="https://unpkg.com/webamp@1.5.0/built/webamp.bundle.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        #webamp-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="webamp-container"></div>
+    <script>
+        const tracks = [
+            {
+                metaData: { artist: "Fishmans", title: "Baby Blue" },
+                url: "assets/music/fishmans-babyblue.flac",
+                duration: 369
+            },
+            {
+                metaData: { artist: "George Clanton", title: "Slide" },
+                url: "assets/music/georgeclanton-slide.flac",
+                duration: 300
+            },
+            {
+                metaData: { artist: "Keane", title: "Is It Any Wonder" },
+                url: "assets/music/keane-isitanywonder.flac",
+                duration: 300
+            },
+            {
+                metaData: { artist: "Moby", title: "Go" },
+                url: "assets/music/moby-go.flac",
+                duration: 300
+            },
+            {
+                metaData: { artist: "The Smiths", title: "This Charming Man" },
+                url: "assets/music/smiths-thischarmingman.flac",
+                duration: 300
+            },
+            {
+                metaData: { artist: "Talk Talk", title: "It's My Life" },
+                url: "assets/music/talktalk-itsmylife.flac",
+                duration: 300
+            },
+            {
+                metaData: { artist: "The System", title: "Almost Grown" },
+                url: "assets/music/thesystem-almostgrown.flac",
+                duration: 300
+            }
+        ];
+
+        const webamp = new Webamp({
+            initialTracks: tracks
+        });
+
+        webamp.renderWhenReady(document.getElementById('webamp-container'));
+    </script>
+</body>
+
+</html>
